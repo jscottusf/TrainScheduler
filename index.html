@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Scheduler</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="header display-4"><i class="fas fa-train"></i></i> Train Scheduler</h1>
+            <h2>Choo choo, here comes the train.</h2>
+        </div> 
+        <div class="container border border-dark rounded bg-white my-2 pb-2">
+            <div class="row">
+                <div class="col-lg-12 top text-light bg-dark p-2">
+                    <i class="fas fa-subway"></i></i> Train Schedule
+                </div>
+            </div>
+            <div class="row">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency (min)</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Oregon Trail</th>
+                        <td>Portland, Oregon</td>
+                        <td>3600</td>
+                        <td>01:39 PM</td>
+                        <td>40</td>
+                      </tr>
+                      <tr>
+                        <td>Carolinian</th>
+                        <td>Raleigh, North Carolina</td>
+                        <td>1200</td>
+                        <td>11:45 PM</td>
+                        <td>1000</td>
+                      </tr>
+                      <!-- <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                      </tr> -->
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <br>
+        <div class="container border border-dark bg-white rounded my-2 pb-2">
+            <div class="row">
+                <div class="col-lg-12 top text-light bg-dark p-2"><i class="fas fa-exclamation-triangle"></i></i></i> Add New Train</div>
+            </div>
+            <form>
+                <div class="form-group">
+                <label for="search-term">Train Name</label>
+                <input type="search-term" class="form-control" id="train-name" placeholder="enter train name...">
+                </div>
+                <div class="form-group">
+                    <label for="search-term">Destination</label>
+                    <input type="search-term" class="form-control" id="destination" placeholder="city, state...">
+                </div>
+                <div class="form-group">
+                    <label for="start-year">First Train Time (HH:mm - military time)</label>
+                    <input type="search" class="form-control" id="first-train-time" placeholder="enter first train time...">
+                </div>
+                <div class="form-group">
+                    <label for="end-year">Frequency (min)</label>
+                    <input type="email" class="form-control" id="frequency" placeholder="enter train frequency (in minutes)...">
+                </div>
+            </form>
+            <div class="row">
+                <div class="col-lg-10">
+                    <button type="button" id="search" class="btn btn-outline-dark">Add Train</button>
+                </div>
+            </div>
+        </div>
+          
+    </div>
+    <br><br><br><br><br>
+    <footer class="footer bg-white">
+        <div class="container">
+          <span><a class="text-decoration-none text-muted dark" href="https://jscottusf.github.io/portfolio.html">Joel Scott © 2020</a></span>
+        </div>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/61f75f2d8a.js" crossorigin="anonymous"></script>
+    <script src="./assets/javascript/script.js"></script>
+</body>
+</html>
