@@ -7,7 +7,8 @@
     <title>Train Scheduler</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
-</head>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 <body>
     <div class="container">
         <div class="jumbotron">
@@ -31,27 +32,8 @@
                         <th scope="col">Minutes Away</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>Oregon Trail</th>
-                        <td>Portland, Oregon</td>
-                        <td>3600</td>
-                        <td>01:39 PM</td>
-                        <td>40</td>
-                      </tr>
-                      <tr>
-                        <td>Carolinian</th>
-                        <td>Raleigh, North Carolina</td>
-                        <td>1200</td>
-                        <td>11:45 PM</td>
-                        <td>1000</td>
-                      </tr>
-                      <!-- <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                      </tr> -->
+                    <tbody id="train-schedule">
+                      
                     </tbody>
                   </table>
             </div>
@@ -81,7 +63,7 @@
             </form>
             <div class="row">
                 <div class="col-lg-10">
-                    <button type="button" id="search" class="btn btn-outline-dark">Add Train</button>
+                    <button type="button" id="add-train" class="btn btn-outline-dark">Add Train</button>
                 </div>
             </div>
         </div>
