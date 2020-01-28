@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+    //firebaseConfig
     const firebaseConfig = {
         apiKey: "AIzaSyDfxhHTnEaV1raE4gvYTLNyNd_3Jv-Ho14",
         authDomain: "trainschedulerjs.firebaseapp.com",
