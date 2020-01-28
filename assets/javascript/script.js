@@ -14,18 +14,21 @@ $(document).ready(function() {
     //global variables
     let trains;
     let database;
+    let trainName;
+    let trainDestination;
+    let firstTrain;
+    let trainFrequency;
+    let minutesLeft = 0;
+    let trainArrival = 0;
+    let schedule = {};
+    //buttons
     let newTrainTR;
     let tdName;
     let tdDestination;
     let tdFrequency;
     let tdNextTrain;
-    let trainName;
-    let trainDestination;
-    let firstTrain;
-    let trainFrequency;
-    let schedule = {};
+    let trashIcon;
     
-
     //Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     
@@ -41,7 +44,7 @@ $(document).ready(function() {
             tdFrequency = $('<td>' + trains[i].frequency + '</td>') ;
             tdNextTrain = $('<td>' + trains[i].time + '</td>');
             tdMinutesAway = $('<td>' + trains[i].minutes + '</td>');
-            var trashIcon = $('<td><i data-train="' + i + '" class="remove btn fas fa-trash"></td>');
+            trashIcon = $('<td><i data-train="' + i + '" class="remove btn fas fa-trash"></td>');
             $(newTrainTR).append(tdName, tdDestination, tdFrequency, tdNextTrain, tdMinutesAway, trashIcon);
         }
     }
@@ -52,11 +55,8 @@ $(document).ready(function() {
         trainDestination = $('#destination').val().trim();
         firstTrain = $('#first-train-time').val().trim();
         trainFrequency = $('#frequency').val().trim();
-        //var trainTimeConverted = moment(firstTrain, "hh:mm").subtract(1, "years");
-        //var diffTime = moment().diff(moment(trainTimeConverted), "minutes");
-        //var timeRemainder = diffTime % trainFrequency;
-        var minutesLeft = 0; //= trainFrequency - timeRemainder;
-        var trainArrival = 0; //= moment().add(minutesLeft, "minutes").format("hh:mm");
+        minutesLeft;
+        trainArrival;
         schedule = {name: trainName, destination: trainDestination, first: firstTrain, frequency: trainFrequency, minutes: minutesLeft, time: trainArrival};
     }
 
@@ -81,7 +81,6 @@ $(document).ready(function() {
             trains[i] = {name: trainName, destination: trainDestination, first: firstTrain, frequency: trainFrequency, minutes: newminutesLeft, time: newtrainArrival}; 
         }
     }
-    
 
     $("body").on("keyup", ".form-control", function(event) {
         if (event.keyCode === 13) {

@@ -7,14 +7,15 @@
     <title>Train Scheduler</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
+    
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 <body>
+    <header>
+        <h1 class="head"><i class="fas fa-train"> </i>  Train Scheduler</h1>
+    </header>
     <div class="container">
-        <div class="jumbotron">
-            <h1 class="header display-4"><i class="fas fa-train"></i></i> Train Scheduler</h1>
-        </div> 
         <div class="container border border-dark rounded bg-white my-2 pb-2">
             <div class="row">
                 <div class="col-lg-12 top text-light bg-dark p-2 pb-0">
@@ -34,49 +35,71 @@
                       </tr>
                     </thead>
                     <tbody id="train-schedule">
-                      
                     </tbody>
                   </table>
             </div>
         </div>
         <br>
-        <div class="container border border-dark bg-white rounded my-2 pb-2">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-12 top text-light bg-dark p-2"><i class="fas fa-exclamation-triangle"></i></i></i> Add New Train</div>
+                <div class="col-lg-12">
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+                       + Add Train
+                    </button>
+                </div>
             </div>
-            <form>
-                <div class="form-group">
-                <label for="search-term">Train Name</label>
-                <input type="search-term" class="form-control" id="train-name" placeholder="enter train name...">
-                </div>
-                <div class="form-group">
-                    <label for="search-term">Destination</label>
-                    <input type="search-term" class="form-control" id="destination" placeholder="city, state...">
-                </div>
-                <div class="form-group">
-                    <label for="start-year">First Train Time</label>
-                    <input type="time" class="form-control" id="first-train-time" placeholder="enter first train time...">
-                </div>
-                <div class="form-group">
-                    <label for="end-year">Frequency (min)</label>
-                    <input type="number" min="1" class="form-control" id="frequency" placeholder="enter train frequency (in minutes)...">
-                </div>
-            </form>
-            <div class="row">
-                <div class="col-lg-10">
-                    <button type="button" id="add-train" class="btn btn-outline-dark">Add Train</button>
-                </div>
+        </div>
+    </div>
+    <br><br>
+  <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body border border-dark rounded">
+                    <div class="container bg-white pb-2">
+                        <div class="row">
+                            <div class="col-lg-12 top text-light rounded bg-dark p-2"><i class="fas fa-exclamation-triangle"></i></i></i> Add New Train</div>
+                        </div>
+                        <form>
+                            <div class="form-group">
+                            <label for="search-term">Train Name</label>
+                            <input type="search-term" class="form-control" id="train-name" placeholder="enter train name...">
+                            </div>
+                            <div class="form-group">
+                                <label for="search-term">Destination</label>
+                                <input type="search-term" class="form-control" id="destination" placeholder="city, state...">
+                            </div>
+                            <div class="form-group">
+                                <label for="start-year">First Train Time</label>
+                                <input type="time" class="form-control" id="first-train-time" placeholder="enter first train time...">
+                            </div>
+                            <div class="form-group">
+                                <label for="end-year">Frequency (min)</label>
+                                <input type="number" min="1" class="form-control" id="frequency" placeholder="enter train frequency (in minutes)...">
+                            </div>
+                        </form>
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <button type="button" id="add-train" class="btn btn-outline-dark" data-dismiss="modal">Add Train</button>
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
             </div>
         </div>
     </div>
     <br><br>
     <footer class="footer bg-white">
         <div class="container">
-          <span><a class="text-decoration-none text-muted dark" href="https://jscottusf.github.io/portfolio.html">Joel Scott © 2020</a></span>
+            <span><a class="text-decoration-none text-muted dark" href="https://jscottusf.github.io/portfolio.html">Joel Scott © 2020</a></span>
         </div>
     </footer>
     
     
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/61f75f2d8a.js" crossorigin="anonymous"></script>
     <script src="./assets/javascript/script.js"></script>

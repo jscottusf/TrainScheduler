@@ -5,7 +5,28 @@ html {
   
 body {
     margin-bottom: 60px; /* Margin bottom by footer height */
-    background-color: aliceblue;
+    background-image: url("../images/train-station.jpg");
+    background-size: 120% auto;
+    background-position-y: top;
+    background-position-x: center; 
+}
+
+header {
+    width: 100%;
+    position: relative;
+    padding: 5px;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.head {
+    margin-left: 60%;
+    margin-right: 0;
+    padding: 5px 5px 5px 20px;
+    width: 360px;
+    background:rgba(255,255,255,0.5);
+    border-radius: 15px;
+    border: black solid 2px;
 }
 
 .footer {
@@ -16,13 +37,6 @@ body {
     line-height: 60px; /* Vertically center the text there */
     text-align: center;
 }
-
-.jumbotron {
-    background-color: rgb(33, 50, 90);
-    color: white;
-    text-align: center;
-}
-
 
 .display-4 {
     font-weight: 700;
