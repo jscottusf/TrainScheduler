@@ -6,9 +6,10 @@ html {
 body {
     margin-bottom: 60px; /* Margin bottom by footer height */
     background-image: url("../images/train-station.jpg");
-    background-size: 120% auto;
-    background-position-y: top;
-    background-position-x: center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 header {
