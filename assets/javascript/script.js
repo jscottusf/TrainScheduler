@@ -31,9 +31,9 @@ $(document).ready(function() {
     
     //Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    
     database = firebase.database();
 
+    //render train schedule by looping through objects in train array
     function renderTrainSchedule(trains) {
         $('#train-schedule').empty();
         for (var i = 0; i < trains.length; i++) {
@@ -49,6 +49,7 @@ $(document).ready(function() {
         }
     }
 
+    //initialize schedule by pulling info from forms
     function initializeSchedule() {
         event.preventDefault();
         trainName = $('#train-name').val().trim();
@@ -60,6 +61,7 @@ $(document).ready(function() {
         schedule = {name: trainName, destination: trainDestination, first: firstTrain, frequency: trainFrequency, minutes: minutesLeft, time: trainArrival};
     }
 
+    //loop through object and calculate arrival time/minutes for each train
     function refreshTimes(snapshot) {
         trains = snapshot.val().trains;
         for (var i = 0; i < trains.length; i++) {
@@ -82,12 +84,14 @@ $(document).ready(function() {
         }
     }
 
+    //enter button to submit new train form
     $("body").on("keyup", ".form-control", function(event) {
         if (event.keyCode === 13) {
         $("#add-train").click();
         }
     });
 
+    //add mew train only if all boxes have information, otherise it just disapears. Empty input forms
     $('#add-train').on('click', function(event) {
         initializeSchedule();
         $('#train-name').val('');
@@ -102,6 +106,7 @@ $(document).ready(function() {
         }
     })
 
+    //delete trains from schedule by pulling the train number data and splicing train from array, then updating database
     $(document).on('click', '.remove', function() {
         var trainNumber = $(this).attr('data-train');
         trains.splice(trainNumber, 1);
@@ -111,6 +116,7 @@ $(document).ready(function() {
         })
     });
 
+    //use firebase database in order to calculate times and render the train schedule, if no trains ezist, create an empty array
     database.ref().on('value', function(snapshot) {
         if (snapshot.child('trains').exists()) {
             trains = snapshot.val().trains;

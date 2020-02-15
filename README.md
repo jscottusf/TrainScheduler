@@ -1,2 +1,6 @@
 # TrainScheduler
-choo choo, here comes the train
+Web application which allows user to access train arrival times, add new trains, and remove trains from schedule.
+
+Web application deployed at: https://jscottusf.github.io/TrainScheduler/
+
+
