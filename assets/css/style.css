@@ -6,9 +6,10 @@ html {
 body {
     margin-bottom: 60px; /* Margin bottom by footer height */
     background-image: url("../images/train-station.jpg");
-    background-size: 120% auto;
-    background-position-y: top;
-    background-position-x: center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 header {
@@ -20,7 +21,7 @@ header {
 }
 
 .head {
-    margin-left: 60%;
+    margin-left: auto;
     margin-right: 0;
     padding: 5px 5px 5px 20px;
     width: 360px;
